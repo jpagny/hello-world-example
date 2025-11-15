@@ -1,0 +1,116 @@
+
+######################################################################
+# ✅ CREATE EXAMPLE — OK (201)
+######################################################################
+
+### 🇬🇧 Create example (English)
+POST {{baseUrl}}/api/examples
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "name": "My first example"
+}
+
+### 🇫🇷 Créer un exemple (Français)
+POST {{baseUrl}}/api/examples
+Content-Type: application/json
+Accept: application/json
+Accept-Language: fr
+
+{
+  "name": "Mon premier exemple"
+}
+
+
+######################################################################
+# ⚠️ ERROR CASES TO TEST
+######################################################################
+
+### 🧾 🇬🇧 Validation — missing/blank name → 400
+POST {{baseUrl}}/api/examples
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "name": ""
+}
+
+### 🧾 🇫🇷 Validation — nom manquant/vide → 400
+POST {{baseUrl}}/api/examples
+Content-Type: application/json
+Accept: application/json
+Accept-Language: fr
+
+{
+  "name": ""
+}
+
+
+### 🧾 🇬🇧 Validation — name too short (<3) → 400
+POST {{baseUrl}}/api/examples
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "name": "ab"
+}
+
+### 🧾 🇫🇷 Validation — nom trop court (<3) → 400
+POST {{baseUrl}}/api/examples
+Content-Type: application/json
+Accept: application/json
+Accept-Language: fr
+
+{
+  "name": "ab"
+}
+
+
+######################################################################
+# 💼 BUSINESS ERRORS
+######################################################################
+
+### 🇬🇧 Business — duplicate (ALREADY_EXISTS) → 409
+POST {{baseUrl}}/api/examples
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "name": "duplicate"
+}
+
+### 🇫🇷 Métier — doublon (ALREADY_EXISTS) → 409
+POST {{baseUrl}}/api/examples
+Content-Type: application/json
+Accept: application/json
+Accept-Language: fr
+
+{
+  "name": "duplicate"
+}
+
+
+### 🇬🇧 Business — forbidden name (FORBIDDEN) → 403
+POST {{baseUrl}}/api/examples
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "name": "forbidden"
+}
+
+### 🇫🇷 Métier — nom interdit (FORBIDDEN) → 403
+POST {{baseUrl}}/api/examples
+Content-Type: application/json
+Accept: application/json
+Accept-Language: fr
+
+{
+  "name": "forbidden"
+}

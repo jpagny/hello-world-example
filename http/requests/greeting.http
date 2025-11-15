@@ -1,0 +1,116 @@
+
+
+
+######################################################################
+# ✅ SUCCESS CASES
+######################################################################
+
+### 🇬🇧 English greeting
+POST {{baseUrl}}/api/greeting
+Content-Type: application/json
+Accept: application/json
+Accept-Language: fr
+
+{
+  "name": "John"
+}
+
+### 🇫🇷 Salutation française
+POST {{baseUrl}}/api/greeting
+Content-Type: application/json
+Accept: application/json
+Accept-Language: fr
+
+{
+  "name": "Jean"
+}
+
+
+######################################################################
+# ⚠️ VALIDATION ERRORS (→ 400)
+######################################################################
+
+### 🇬🇧 Missing name → 400
+POST {{baseUrl}}/api/greeting
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+}
+
+### 🇫🇷 Nom manquant → 400
+POST {{baseUrl}}/api/greeting
+Content-Type: application/json
+Accept: application/json
+Accept-Language: fr
+
+{
+}
+
+
+### 🇬🇧 Blank name → 400
+POST {{baseUrl}}/api/greeting
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "name": ""
+}
+
+### 🇫🇷 Nom vide → 400
+POST {{baseUrl}}/api/greeting
+Content-Type: application/json
+Accept: application/json
+Accept-Language: fr
+
+{
+  "name": ""
+}
+
+
+######################################################################
+# 💼 BUSINESS ERRORS
+######################################################################
+
+### 🇬🇧 Business — forbidden name (FORBIDDEN) → 403
+POST {{baseUrl}}/api/greeting
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "name": "forbidden"
+}
+
+### 🇫🇷 Métier — nom interdit (FORBIDDEN) → 403
+POST {{baseUrl}}/api/greeting
+Content-Type: application/json
+Accept: application/json
+Accept-Language: fr
+
+{
+  "name": "forbidden"
+}
+
+
+### 🇬🇧 Business — duplicate greeting (ALREADY_EXISTS) → 409
+POST {{baseUrl}}/api/greeting
+Content-Type: application/json
+Accept: application/json
+Accept-Language: en
+
+{
+  "name": "duplicate"
+}
+
+### 🇫🇷 Métier — doublon de salutation (ALREADY_EXISTS) → 409
+POST {{baseUrl}}/api/greeting
+Content-Type: application/json
+Accept: application/json
+Accept-Language: fr
+
+{
+  "name": "duplicate"
+}
