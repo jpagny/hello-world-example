@@ -1,4 +1,4 @@
-package com.demo.presentation.representation.example.input.converters;
+package com.demo.presentation.handlers.example.input.converters;
 
 import com.demo.presentation.common.qualifier.PresentationConverter;
 import com.demo.presentation.handlers.example.input.requests.CreateExampleRequest;
