@@ -37,7 +37,7 @@
 
         <dependency>
             <groupId>com.demo</groupId>
-            <artifactId>hello-world-entrypoint</artifactId>
+            <artifactId>hello-world-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

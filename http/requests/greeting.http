@@ -9,7 +9,7 @@
 POST {{baseUrl}}/api/greeting
 Content-Type: application/json
 Accept: application/json
-Accept-Language: fr
+Accept-Language: en
 
 {
   "name": "John"
@@ -34,7 +34,7 @@ Accept-Language: fr
 POST {{baseUrl}}/api/greeting
 Content-Type: application/json
 Accept: application/json
-Accept-Language: en
+Accept-Language: fr
 
 {
 }

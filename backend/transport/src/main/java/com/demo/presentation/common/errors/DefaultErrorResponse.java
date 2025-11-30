@@ -1,0 +1,22 @@
+package com.demo.presentation.common.errors;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import java.time.Instant;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public record DefaultErrorResponse(
+        String type,
+        String code,
+        String message,
+        Integer status,
+        String path,
+        String traceId,
+        @JsonFormat(shape = JsonFormat.Shape.STRING)
+        Instant timestamp
+) {
+    public static DefaultErrorResponse of(String type, String code, String message, int status, String path, String traceId) {
+        return new DefaultErrorResponse(type, code, message, status, path, traceId, Instant.now());
+    }
+}
