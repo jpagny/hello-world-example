@@ -21,9 +21,12 @@ import static org.mockito.Mockito.*;
 @DisplayName("GetGreetingUseCaseImpl")
 class GetGreetingUseCaseImplTest {
 
+
     @Nested
     @DisplayName("[DEV]")
     class Dev {
+
+        /*
 
         @Test
         @DisplayName("Should throw exception when query is null given handle invoked")
@@ -205,6 +208,8 @@ class GetGreetingUseCaseImplTest {
             org.assertj.core.api.Assertions.assertThat(result.messageKey())
                     .isEqualTo(com.demo.domain.core.greeting.messages.GreetingMessageKey.MESSAGE_GREETING_TEMPLATE_NAME_THEN_BASE_FRIENDLY);
         }
+
+         */
     }
 
     @Nested

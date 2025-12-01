@@ -32,7 +32,7 @@ public class MessageResourceConfiguration {
                 basenames.add("classpath:i18n/" + base);
             }
         } catch (IOException e) {
-            log.warn("[i18n] Failed to scan i18n files", e);
+            log.error("[i18n] Failed to scan i18n files", e);
         }
 
         var src = new ReloadableResourceBundleMessageSource();
