@@ -8,5 +8,5 @@ import com.demo.domain.core.greeting.models.LocaleTag;
 import java.util.Optional;
 
 public interface GreetingLexiconPort {
-    Optional<Greeting> load(LocaleTag locale, LanguageLevel level, GreetingContextKey context);
+    Optional<Greeting> load(LocaleTag locale, LanguageLevel level, GreetingContextKey context, String name);
 }

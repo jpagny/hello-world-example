@@ -20,11 +20,11 @@ public class GreetingLexiconAdapter implements GreetingLexiconPort {
     }
 
     @Override
-    public Optional<Greeting> load(LocaleTag locale, LanguageLevel level, GreetingContextKey context) {
+    public Optional<Greeting> load(LocaleTag locale, LanguageLevel level, GreetingContextKey context, String name) {
         return repo.findProjectionByKeys(locale.value(), level.name(), context.value())
                 .map(p -> new Greeting(
                         p.getBaseText(),
-                        "",
+                        name,
                         LanguageLevel.valueOf(p.getLevelCode()),
                         new GreetingContextKey(p.getContextCode()),
                         new LocaleTag(p.getLocaleTag())

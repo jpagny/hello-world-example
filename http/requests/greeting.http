@@ -12,7 +12,8 @@ Accept: application/json
 Accept-Language: en
 
 {
-  "name": "John"
+  "name": "John",
+  "level": "FORMAL"
 }
 
 ### 🇫🇷 Salutation française
@@ -22,7 +23,10 @@ Accept: application/json
 Accept-Language: fr
 
 {
-  "name": "Jean"
+  "name": "Jean",
+  "locale": "fr-CA",
+  "level": "FORMAL",
+  "context": "EVENING"
 }
 
 

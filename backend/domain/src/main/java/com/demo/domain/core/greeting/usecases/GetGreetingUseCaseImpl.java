@@ -26,7 +26,7 @@ public class GetGreetingUseCaseImpl implements GetGreetingUseCase {
             throw GreetingDomainException.invalidQuery();
         }
 
-        final var greeting = lexicon.load(query.locale(), query.level(), query.context())
+        final var greeting = lexicon.load(query.locale(), query.level(), query.context(), query.name())
                 .orElseThrow(() -> GreetingDomainException.missingLexiconEntry(
                         query.locale().value(),
                         query.level().name(),
